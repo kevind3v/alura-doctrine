@@ -1,0 +1,12 @@
+{
+  "name": "kevind3v/alura-doctrine",
+  "description": "Projeto do curso de Doctrine da alura",
+  "autoload": {
+    "psr-4": {
+      "Doctrine\\": "src/"
+    }
+  },
+  "require": {
+    "doctrine/orm": "^2.8"
+  }
+}
