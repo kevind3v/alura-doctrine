@@ -19,8 +19,6 @@ foreach ($list as $student) {
     echo "Nome: {$student->getName()} e RA: {$student->getId()} \n\n";
 }
 
-$marcos = $students->find(4);
-echo $marcos->getName();
 
 
 $larissa = $students->findOneBy(
