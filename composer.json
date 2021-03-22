@@ -6,7 +6,11 @@
       "Doctrine\\": "src/"
     }
   },
+  "scripts": {
+    "orm": "vendor\\bin\\doctrine.bat"
+  },
   "require": {
-    "doctrine/orm": "^2.8"
+    "doctrine/orm": "^2.8",
+    "doctrine/migrations": "^2.0"
   }
 }

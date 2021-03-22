@@ -1,5 +1,6 @@
 <?php
 
+use Doctrine\Entity\Phone;
 use Doctrine\Entity\Student;
 use Doctrine\Helper\EntityManagerFactory;
 
@@ -16,15 +17,21 @@ $students = $eM->getRepository(Student::class);
 $list = $students->findAll();
 
 foreach ($list as $student) {
-    echo "Nome: {$student->getName()} e RA: {$student->getId()} \n\n";
+    $phones = $student->getPhones()->map(function(Phone $phone){
+        return $phone->getNumber();
+    })->toArray();
+    echo "Nome: {$student->getName()} e RA: {$student->getId()}\n";
+    echo "Telefone: ". (implode(", ", $phones)) . "\n\n";
 }
 
+//$marcos = $students->find(4);
+//echo $marcos->getName();
+//
+//
+//$larissa = $students->findOneBy(
+//    [
+//        "name" => "Larissa Rodrigues"
+//    ]
+//);
 
-
-$larissa = $students->findOneBy(
-    [
-        "name" => "Larissa Rodrigues"
-    ]
-);
-
-var_dump($larissa);
+//var_dump($larissa);

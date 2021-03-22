@@ -1,8 +1,8 @@
 <?php
 
+use Doctrine\Entity\Course;
 use Doctrine\Entity\Phone;
 use Doctrine\Entity\Student;
-
 use Doctrine\Helper\EntityManagerFactory;
 
 require_once __DIR__ . "/../vendor/autoload.php";
@@ -11,14 +11,10 @@ require_once __DIR__ . "/../vendor/autoload.php";
 $eMF = new EntityManagerFactory();
 $eM = $eMF->getEntityManage();
 
-$student = new Student();
-$student->setName($argv[1]);
-for ($i = 2; $i < $argc; $i++) {
-    $phone = new Phone();
-    $student->addPhone($phone->setNumber($argv[$i]));
-}
+$course = new Course();
+$course->setName($argv[1]);
 
 // Observar a entidade
-$eM->persist($student);
+$eM->persist($course);
 //salvar
 $eM->flush();
