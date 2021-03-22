@@ -13,8 +13,9 @@ $eM = $eMF->getEntityManage();
 //Pegar repositório de alguma classe e buscar dados
 $students = $eM->getRepository(Student::class);
 
-/** @var Student[] $list */
-$list = $students->findAll();
+
+$stmt = $eM->createQuery("SELECT student FROM Doctrine\Entity\Student student");
+$list = $stmt->getResult();
 
 foreach ($list as $student) {
     $phones = $student->getPhones()->map(function(Phone $phone){

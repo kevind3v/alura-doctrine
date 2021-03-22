@@ -13,9 +13,9 @@ $eM = $eMF->getEntityManage();
 $studentsR = $eM->getRepository(Student::class);
 
 /** @var Student[] $list */
-$list = $studentsR->findAll();
+$listStudents = $studentsR->findAll();
 
-foreach ($list as $student) {
+foreach ($listStudents as $student) {
     $courses = $student->getCourses();
     $phones = $student->getPhones()->map(
         function (Phone $phone) {

@@ -22,7 +22,7 @@ class Student
      */
     private $name;
     /**
-     * @OneToMany(targetEntity="Phone", mappedBy="student", cascade={"remove", "persist"})
+     * @OneToMany(targetEntity="Phone", mappedBy="student", cascade={"remove", "persist"}, fetch="EAGER")
      */
     private $phones;
 
