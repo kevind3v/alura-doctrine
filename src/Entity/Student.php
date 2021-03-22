@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\Collection;
 
 /**
  * Anotação para dizer que a classe é uma entidade
- * @Entity
+ * @Entity(repositoryClass="Doctrine\Repository\StudentR")
  */
 class Student
 {
